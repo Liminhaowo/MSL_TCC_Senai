@@ -17,3 +17,4 @@ C:\Users\25162930\source\repos\Cantina_1.0\obj\Debug\net8.0-windows\Cantina_1._0
 C:\Users\25162930\source\repos\Cantina_1.0\obj\Debug\net8.0-windows\Cantina_1._0.FormCantina.resources
 C:\Users\25162930\source\repos\Cantina_1.0\obj\Debug\net8.0-windows\Cantina_1._0.FormIntroducao.resources
 C:\Users\25162930\source\repos\Cantina_1.0\obj\Debug\net8.0-windows\Cantina_1._0.Properties.Resources.resources
+C:\Users\25162930\source\repos\Cantina_1.0\obj\Debug\net8.0-windows\Cantina_1.0.sourcelink.json

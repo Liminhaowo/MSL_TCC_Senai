@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 
 namespace Cantina_1._0
 {
-    internal class Produtos
+    internal class Produto
     {
         public string Nome { get; set; }
 
         public double Preco { get; set; }
+    }
+
+    internal class  ItemComanda
+    {
+        public Produto Produto { get; set; }
+        public int Quantidade { get; set; }
+
+        public double Total => Produto.Preco * Quantidade;
+
+        public string Nome => $"{Produto.Nome} x {Quantidade}";
     }
 }

@@ -28,5 +28,10 @@ namespace Cantina_1._0
 
         }
 
+        private void btnInicializar_Click(object sender, EventArgs e)
+        {
+            FormCantina formCantina = new FormCantina();
+            formCantina.Show();
+        }
     }
 }

@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\formcantina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:formcantina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|c:\\users\\25162930\\source\\repos\\cantina_1.0\\formcantina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:formcantina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\formteladelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:formteladelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|c:\\users\\25162930\\source\\repos\\cantina_1.0\\formteladelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:formteladelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|c:\\users\\25162930\\source\\repos\\cantina_1.0\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\formintroducao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:formintroducao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|c:\\users\\25162930\\source\\repos\\cantina_1.0\\formintroducao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04919F49-F088-44DF-A001-8E32A928736E}|Cantina_1.0.csproj|solutionrelative:formintroducao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Produtos.cs",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\Produtos.cs",
+              "RelativeDocumentMoniker": "Produtos.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\Produtos.cs",
+              "RelativeToolTip": "Produtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T11:43:49.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormIntroducao.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormIntroducao.cs",
+              "RelativeDocumentMoniker": "FormIntroducao.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormIntroducao.cs [Projeto]",
+              "RelativeToolTip": "FormIntroducao.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:14:54.856Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormIntroducao.cs",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormIntroducao.cs",
+              "RelativeDocumentMoniker": "FormIntroducao.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormIntroducao.cs",
+              "RelativeToolTip": "FormIntroducao.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwCAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:15:19.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormTelaDeLogin.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormTelaDeLogin.cs",
+              "RelativeDocumentMoniker": "FormTelaDeLogin.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormTelaDeLogin.cs [Projeto]",
+              "RelativeToolTip": "FormTelaDeLogin.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:14:56.161Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormTelaDeLogin.cs",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormTelaDeLogin.cs",
+              "RelativeDocumentMoniker": "FormTelaDeLogin.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormTelaDeLogin.cs",
+              "RelativeToolTip": "FormTelaDeLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:15:35.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormCantina.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormCantina.cs",
+              "RelativeDocumentMoniker": "FormCantina.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormCantina.cs [Projeto]*",
+              "RelativeToolTip": "FormCantina.cs [Projeto]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:14:53.164Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormCantina.cs",
+              "DocumentMoniker": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormCantina.cs",
+              "RelativeDocumentMoniker": "FormCantina.cs",
+              "ToolTip": "C:\\Users\\25162930\\source\\repos\\Cantina_1.0\\FormCantina.cs*",
+              "RelativeToolTip": "FormCantina.cs*",
+              "ViewState": "AgIAAKgAAAAAAAAAAIAwwLoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:15:33.616Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

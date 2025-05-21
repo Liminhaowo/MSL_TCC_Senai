@@ -35,10 +35,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Bauhaus 93", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(184, 116);
+            lblTitulo.Font = new Font("Bauhaus 93", 90F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(146, 122);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(433, 108);
+            lblTitulo.Size = new Size(540, 136);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "CANTINA";
             lblTitulo.Click += lblTitulo_Click;
@@ -47,24 +47,27 @@
             // 
             btnInicializar.BackColor = Color.Black;
             btnInicializar.BackgroundImageLayout = ImageLayout.None;
-            btnInicializar.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInicializar.ForeColor = SystemColors.ControlLightLight;
-            btnInicializar.Location = new Point(358, 258);
+            btnInicializar.FlatStyle = FlatStyle.Flat;
+            btnInicializar.Font = new Font("Bahnschrift", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInicializar.ForeColor = Color.FromArgb(230, 255, 0);
+            btnInicializar.Location = new Point(372, 276);
             btnInicializar.Name = "btnInicializar";
-            btnInicializar.Size = new Size(86, 42);
+            btnInicializar.Size = new Size(104, 56);
             btnInicializar.TabIndex = 1;
             btnInicializar.Text = "JOGAR";
             btnInicializar.UseVisualStyleBackColor = false;
+            btnInicializar.Click += btnInicializar_Click;
             // 
             // FormIntroducao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Yellow;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(230, 255, 0);
+            ClientSize = new Size(821, 502);
             Controls.Add(btnInicializar);
             Controls.Add(lblTitulo);
             Name = "FormIntroducao";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormIntroducao";
             Load += FormIntroducao_Load;
             ResumeLayout(false);

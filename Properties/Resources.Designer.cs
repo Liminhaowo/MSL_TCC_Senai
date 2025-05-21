@@ -63,6 +63,16 @@ namespace Cantina_1._0.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1e8be291_2f09_4af5_bb7b_24927407d1a3 {
+            get {
+                object obj = ResourceManager.GetObject("1e8be291-2f09-4af5-bb7b-24927407d1a3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap af64e4ce_739f_478e_9c20_2a6e1e8cd6ec {
             get {
                 object obj = ResourceManager.GetObject("af64e4ce-739f-478e-9c20-2a6e1e8cd6ec", resourceCulture);
@@ -73,9 +83,39 @@ namespace Cantina_1._0.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_05_21_085203 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de tela 2025-05-21 085203", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_05_21_085355 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de tela 2025-05-21 085355", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sddefault {
+            get {
+                object obj = ResourceManager.GetObject("sddefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
