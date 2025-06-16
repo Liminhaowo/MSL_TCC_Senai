@@ -16,6 +16,8 @@ namespace Cantina_1._0
         public double total = 0;
         public int quantidade = 0;
 
+        private static int proximoIdPedido = 1;
+
         public FormCantina()
         {
             InitializeComponent();
@@ -23,22 +25,23 @@ namespace Cantina_1._0
             nudQuantidade.Minimum = 1;
 
             listBoxCardapio.DisplayMember = "Nome";
-
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Pão de Quiejo - R$ 3,50", Preco = 3.50 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Coxinha - R$ 5,00", Preco = 5.00 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Pastel de Carne - R$ 6,00", Preco = 6.00 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Pastel de Queijo - R$ 5,50", Preco = 5.50 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Hambúrguer Simples - R$ 8,00", Preco = 8.00 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Hambúrguer com Queijo - R$ 9,00", Preco = 9.00 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "X-Tudo - R$ 12,00", Preco = 12.00 });
-            //Comidas
-
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Suco Natural (300ml) - R$ 4,00", Preco = 4.00 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Refrigerante Lata - R$ 4,50", Preco = 4.50 });
-            listBoxCardapio.Items.Add(new Produto() { Nome = "Água Mineral (500ml) - R$ 2,50", Preco = 2.50 });
-            //Bebidas
-
             listBoxComanda.DisplayMember = "Nome";
+
+            listBoxCardapio.Items.Add(new Produto("Pão de Queijo - R$ 3,50", 3.50, false));
+            listBoxCardapio.Items.Add(new Produto("Coxinha - R$ 5,00", 5.00, false));
+            //Comidas Prontas
+
+            listBoxCardapio.Items.Add(new Produto("Pastel de Carne - R$ 6,00", 6.00, true));
+            listBoxCardapio.Items.Add(new Produto("Pastel de Queijo - R$ 5,50", 5.50, true));
+            listBoxCardapio.Items.Add(new Produto("Hambúrguer Simples - R$ 8,00", 8.00, true));
+            listBoxCardapio.Items.Add(new Produto("Hambúrguer c/Queijo - R$ 9,00", 9.0, true));
+            listBoxCardapio.Items.Add(new Produto("X-Tudo - R$ 12,00", 12.00, true));
+            //Comidas não Prontas
+
+            listBoxCardapio.Items.Add(new Produto("Suco Natural (300ml) - R$ 4,00", 4.00, false));
+            listBoxCardapio.Items.Add(new Produto("Refrigerante Lata - R$ 4,50", 4.50, false));
+            listBoxCardapio.Items.Add(new Produto("Água Mineral (500ml) - R$ 2,50", 2.50, false));
+            //Bebidas       
         }
 
         private void FormCantina_Load(object sender, EventArgs e)
@@ -76,25 +79,48 @@ namespace Cantina_1._0
 
         }
 
+        private void labelTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             if (listBoxCardapio.SelectedItem != null)
             {
                 int quantidade = (int)nudQuantidade.Value;
-
                 Produto produto = (Produto)listBoxCardapio.SelectedItem;
 
-                ItemComanda item = new ItemComanda()
+                ItemComanda itemExistente = null;
+                foreach (ItemComanda item in listBoxComanda.Items)
                 {
-                    Produto = produto,
-                    Quantidade = quantidade
-                };
+                    if (item.Produto.Nome == produto.Nome)
+                    {
+                        itemExistente = item;
+                        break;
+                    }
+                }
 
-                listBoxComanda.Items.Add(item);
+                if (itemExistente != null)
+                {
+                    double valorAntigo = itemExistente.Total;
+                    itemExistente.Quantidade += quantidade;
 
-                total += item.Total;
+                    total = total - valorAntigo + itemExistente.Total;
 
-                listBoxCardapio.ClearSelected();
+                    int index = listBoxComanda.Items.IndexOf(itemExistente);
+                    listBoxComanda.Items[index] = itemExistente;
+                    listBoxComanda.SelectedIndex = -1;
+                }
+                else
+                {
+                    ItemComanda novoItem = new ItemComanda(produto, quantidade);
+                    listBoxComanda.Items.Add(novoItem);
+                    total += novoItem.Total;
+                }
+
+                labelTotal.Text = $"TOTAL: R$ {total:F2}";
+                listBoxComanda.ClearSelected();
             }
             else
             {
@@ -109,7 +135,6 @@ namespace Cantina_1._0
             if (listBoxComanda.SelectedItem != null)
             {
                 ItemComanda itemSelecionado = (ItemComanda)listBoxComanda.SelectedItem;
-
                 int quantidadeRemover = (int)nudQuantidade.Value;
 
                 if (quantidadeRemover >= itemSelecionado.Quantidade)
@@ -119,12 +144,17 @@ namespace Cantina_1._0
                 }
                 else
                 {
+                    double valorAntigo = itemSelecionado.Total;
                     itemSelecionado.Quantidade -= quantidadeRemover;
-                    total -= itemSelecionado.Produto.Preco * quantidadeRemover;
+                    total -= total - valorAntigo + itemSelecionado.Total;
 
                     int index = listBoxComanda.Items.IndexOf(itemSelecionado);
                     listBoxComanda.Items[index] = itemSelecionado;
+                    listBoxComanda.SelectedIndex = -1;
                 }
+
+                labelTotal.Text = $"TOTAL: R$  {total:F2}";
+
             }
             else
             {
@@ -136,6 +166,9 @@ namespace Cantina_1._0
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            double valorPago = total;
+            double trocado = 0;
+
             if (listBoxComanda.Items.Count == 0)
             {
                 MessageBox.Show("Adicione itens à comanda.");
@@ -154,102 +187,127 @@ namespace Cantina_1._0
                 return;
             }
 
-            string cliente = txtNomeCliente.Text.Trim();
-
-            if (!string.IsNullOrEmpty(cliente))
+            if (cboxPagamento.SelectedIndex == 0)
             {
-                cliente = char.ToUpper(cliente[0]) + cliente.Substring(1).ToLower();
-            }
+                bool pagamentoValido = false;
 
-            StringBuilder resumo = new StringBuilder();
+                while (!pagamentoValido)
+                {
+                    string input = Microsoft.VisualBasic.Interaction.InputBox("Digite o valor pago:", "PAGAMENTO");
 
-            foreach (ItemComanda item in listBoxComanda.Items)
-            {
-                resumo.AppendLine(item.Nome);
-            }
-
-            DateTime dataComanda = dateComandaDia.Value.Date;
-            DateTime horaComanda = dateComandaHoras.Value;
-
-            string dataHoraComanda = $"{dataComanda:dd/MM/yyyy} - {horaComanda:HH:mm:ss}";
-
-            switch (cboxPagamento.SelectedIndex)
-            {
-                case 0:
-                    if (checkBoxViagem.Checked)
+                    if (string.IsNullOrEmpty(input))
                     {
-                        MessageBox.Show(
-                            $"Nome do Cliente: {cliente}\n\n" +
-                            $"Extrato:\n{resumo}\n" +
-                            $"Total a ser pago: R${total:F2}\n\n" +
-                            $"Método de Pagamento: {cboxPagamento.SelectedItem}\n\n" +
-                            $"Data e Hora: {dataHoraComanda}" +
-                            $"Pedido Para Viagem",
-                            "COMANDA"
-                            );
+                        return;
                     }
-                    else
+
+                    if (double.TryParse(input, out double valorPagoTotal))
                     {
-                        MessageBox.Show(
-                           $"Nome do Cliente: {cliente}\n\n" +
-                           $"Extrato:\n{resumo}\n" +
-                           $"Total a ser pago: R${total:F2}\n\n" +
-                           $"Método de Pagamento: {cboxPagamento.SelectedItem}\n\n" +
-                           $"Data e Hora: {dataHoraComanda}",
-                           "COMANDA"
-                           );
-                    }
-                        string input = Microsoft.VisualBasic.Interaction.InputBox("Digite o valor pago:", "PAGAMENTO");
-                        if (double.TryParse(input, out double valorPago))
+                        if (valorPagoTotal < total)
                         {
-                            if (valorPago >= total)
-                            {
-                                double troco = valorPago - total;
-                                MessageBox.Show($"Troco: R${troco:F2}", "TROCADO");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Valor pago insuficiente.", "ERRO");
-                            }
+                            MessageBox.Show("Valor pago insuficiente.", "ERRO");
+                            return;
                         }
                         else
                         {
-                            MessageBox.Show("Valor inválido.", "ERRO");
+                            valorPago = valorPagoTotal;
+                            trocado = valorPagoTotal - total;
+                            MessageBox.Show($"Troco: R${trocado:F2}", "TROCADO");
+                            pagamentoValido = true;
                         }
-                    
-                        break;
-                    
-
-                case 1:
-                    MessageBox.Show(
-                        $"Cliente: {cliente}\n\n" +
-                        $"Extrato:\n{resumo}\n" +
-                        $"Total a pagar: R${total:F2}\n\n" +
-                        $"Pagamento: {cboxPagamento.SelectedItem}\n\n" +
-                        $"Data: {dataHoraComanda}",
-                        "COMANDA"
-                        );
-                    break;
-
-                case 2:
-                    MessageBox.Show(
-                         $"Nome do Cliente: {cliente}\n\n" +
-                         $"Extrato:\n{resumo}\n" +
-                         $"Total a ser pago: R${total:F2}\n\n" +
-                         $"Método de Pagamento: {cboxPagamento.SelectedItem}\n\n" +
-                         $"Data e Hora: {dataHoraComanda}",
-                         "COMANDA"
-                         );
-                    break;
-
-                default:
-                    break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Valor inválido.", "ERRO");
+                    }
+                }
             }
+            else
+            {
+                valorPago = total;
+                trocado = 0; 
+            }
+
+            string nomeCliente = txtNomeCliente.Text.Trim();
+            if (!string.IsNullOrEmpty(nomeCliente))
+            {
+                nomeCliente = char.ToUpper(nomeCliente[0]) + nomeCliente.Substring(1).ToLower();
+            }
+
+            List<ItemComanda> itensDoPedido = new List<ItemComanda>();
+            foreach (ItemComanda item in listBoxComanda.Items)
+            {
+                itensDoPedido.Add(item);
+            }
+
+            DateTime dataHoraAtual = DateTime.Now;
+            bool paraViagem = checkBoxViagem.Checked;
+
+            Pedido novoPedido = new Pedido(nomeCliente, dataHoraAtual, itensDoPedido, total, paraViagem)
+            {
+                IdPedido = proximoIdPedido++,
+            };
+
+            bool vaiCozinha = itensDoPedido.Any(item => item.Produto.Cozinha);
+
+            if (vaiCozinha)
+            {
+                novoPedido.Status = "Em Preparo na Cozinha";
+                CozinhaPedidos.PedidosPreparando.Add(novoPedido);
+
+                FormCozinha formCozinha = Application.OpenForms.OfType<FormCozinha>().FirstOrDefault();
+                if (formCozinha != null)
+                {
+                    formCozinha = new FormCozinha();
+                    formCozinha.Show();
+                }
+
+                MessageBox.Show($"Pedido {novoPedido.IdPedido} enviado para a Cozinha.", "PEDIDO ENVIADO");
+            }
+            else
+            {
+                novoPedido.Status = "Pronto para Entrega";
+                BalcaoPedidos.PedidosEmEspera.Add(novoPedido);
+
+                FormBalcao formBalcao = Application.OpenForms.OfType<FormBalcao>().FirstOrDefault();
+                if (formBalcao != null)
+                {
+                    formBalcao = new FormBalcao();
+                    formBalcao.Show();
+                }
+
+                MessageBox.Show($"Pedido {novoPedido.IdPedido} enviado para o Balcão.", "PEDIDO PRONTO");
+            }
+
+            StringBuilder resumo = new StringBuilder();
+            foreach (ItemComanda item in novoPedido.Itens)
+            {
+                resumo.AppendLine($"{item.Produto.Nome} x {item.Quantidade} - R$ {item.Total:F2}");
+            }
+
+            string tipoPedido = novoPedido.ParaViagem ? "Para Viagem" : "Para Consumir no Local";
+            string destino = vaiCozinha ? "Cozinha" : "Balcão";
+
+            MessageBox.Show(
+                $"ID do Pedido: {novoPedido.IdPedido}\n\n" +
+                $"Nome do Cliente: {novoPedido.NomeCliente}\n\n" +
+                $"Extrato:\n{resumo}\n" +
+                $"Total Cobrado: R$ {novoPedido.Total:F2}\n" +
+                $"Total Pago: R$ {valorPago:F2}\n" +
+                $"Troco: R$ {trocado:F2}\n\n" +
+                $"Método de Pagamento: {cboxPagamento.SelectedItem}\n\n" +
+                $"Pedido: {tipoPedido}\n\n" +
+                $"Data e Hora: {dataHoraAtual:dd/MM/yyyy HH:mm:ss}\n\n" +
+                $"Enviado para: {destino}\n\n",
+                "COMANDA"
+            );
 
             txtNomeCliente.Clear();
             listBoxComanda.Items.Clear();
             cboxPagamento.SelectedIndex = -1;
             total = 0;
+            labelTotal.Text = $"TOTAL: R$ 0,00";
+            checkBoxViagem.Checked = false;
+
         }
 
         private void nudQuantidade_ValueChanged(object sender, EventArgs e)
@@ -280,6 +338,18 @@ namespace Cantina_1._0
         private void checkBoxViagem_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormBalcao formBalcao = new FormBalcao();
+            formBalcao.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCozinha formCozinha = new FormCozinha();
+            formCozinha.Show();
         }
     }
 }

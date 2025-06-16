@@ -17,7 +17,6 @@ namespace Cantina_1._0
             InitializeComponent();
         }
 
-
         private void FormIntroducao_Load(object sender, EventArgs e)
         {
 

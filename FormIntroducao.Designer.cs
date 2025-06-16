@@ -36,7 +36,7 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Bauhaus 93", 90F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(146, 122);
+            lblTitulo.Location = new Point(201, 172);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(540, 136);
             lblTitulo.TabIndex = 0;
@@ -50,11 +50,11 @@
             btnInicializar.FlatStyle = FlatStyle.Flat;
             btnInicializar.Font = new Font("Bahnschrift", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInicializar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnInicializar.Location = new Point(372, 276);
+            btnInicializar.Location = new Point(404, 370);
             btnInicializar.Name = "btnInicializar";
-            btnInicializar.Size = new Size(104, 56);
+            btnInicializar.Size = new Size(136, 62);
             btnInicializar.TabIndex = 1;
-            btnInicializar.Text = "JOGAR";
+            btnInicializar.Text = "ADENTRAR";
             btnInicializar.UseVisualStyleBackColor = false;
             btnInicializar.Click += btnInicializar_Click;
             // 
@@ -63,7 +63,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 255, 0);
-            ClientSize = new Size(821, 502);
+            ClientSize = new Size(938, 595);
             Controls.Add(btnInicializar);
             Controls.Add(lblTitulo);
             Name = "FormIntroducao";

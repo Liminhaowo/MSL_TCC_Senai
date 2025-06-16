@@ -44,6 +44,9 @@
             labelPagamento = new Label();
             picBoxLogo = new PictureBox();
             checkBoxViagem = new CheckBox();
+            labelTotal = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)nudQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBoxLogo).BeginInit();
             SuspendLayout();
@@ -54,9 +57,9 @@
             listBoxCardapio.BorderStyle = BorderStyle.FixedSingle;
             listBoxCardapio.Font = new Font("Bahnschrift", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxCardapio.FormattingEnabled = true;
-            listBoxCardapio.Location = new Point(54, 141);
+            listBoxCardapio.Location = new Point(37, 158);
             listBoxCardapio.Name = "listBoxCardapio";
-            listBoxCardapio.Size = new Size(205, 306);
+            listBoxCardapio.Size = new Size(244, 290);
             listBoxCardapio.TabIndex = 0;
             listBoxCardapio.SelectedIndexChanged += listBoxCardapio_SelectedIndexChanged;
             // 
@@ -66,9 +69,9 @@
             listBoxComanda.BorderStyle = BorderStyle.FixedSingle;
             listBoxComanda.Font = new Font("Bahnschrift", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxComanda.FormattingEnabled = true;
-            listBoxComanda.Location = new Point(538, 141);
+            listBoxComanda.Location = new Point(672, 158);
             listBoxComanda.Name = "listBoxComanda";
-            listBoxComanda.Size = new Size(210, 306);
+            listBoxComanda.Size = new Size(230, 290);
             listBoxComanda.TabIndex = 1;
             listBoxComanda.SelectedIndexChanged += listBoxComanda_SelectedIndexChanged;
             // 
@@ -77,7 +80,7 @@
             labelCardapio.AutoSize = true;
             labelCardapio.Font = new Font("Agrandir Semi Narrow", 12F, FontStyle.Bold);
             labelCardapio.ForeColor = Color.Black;
-            labelCardapio.Location = new Point(105, 103);
+            labelCardapio.Location = new Point(109, 122);
             labelCardapio.Name = "labelCardapio";
             labelCardapio.Size = new Size(91, 22);
             labelCardapio.TabIndex = 2;
@@ -89,7 +92,7 @@
             labelComanda.AutoSize = true;
             labelComanda.Font = new Font("Agrandir Semi Narrow", 12F, FontStyle.Bold);
             labelComanda.ForeColor = Color.Black;
-            labelComanda.Location = new Point(592, 103);
+            labelComanda.Location = new Point(738, 122);
             labelComanda.Name = "labelComanda";
             labelComanda.Size = new Size(94, 22);
             labelComanda.TabIndex = 3;
@@ -99,7 +102,7 @@
             // btnAdicionar
             // 
             btnAdicionar.Font = new Font("Agrandir Semi Narrow", 9.75F, FontStyle.Bold);
-            btnAdicionar.Location = new Point(294, 158);
+            btnAdicionar.Location = new Point(351, 176);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(93, 29);
             btnAdicionar.TabIndex = 4;
@@ -110,7 +113,7 @@
             // btnRemover
             // 
             btnRemover.Font = new Font("Agrandir Semi Narrow", 9.75F, FontStyle.Bold);
-            btnRemover.Location = new Point(413, 158);
+            btnRemover.Location = new Point(507, 176);
             btnRemover.Name = "btnRemover";
             btnRemover.Size = new Size(93, 29);
             btnRemover.TabIndex = 5;
@@ -121,7 +124,7 @@
             // btnFinalizar
             // 
             btnFinalizar.Font = new Font("Agrandir Semi Narrow", 9.75F, FontStyle.Bold);
-            btnFinalizar.Location = new Point(358, 405);
+            btnFinalizar.Location = new Point(432, 434);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(86, 29);
             btnFinalizar.TabIndex = 6;
@@ -131,7 +134,7 @@
             // 
             // nudQuantidade
             // 
-            nudQuantidade.Location = new Point(342, 203);
+            nudQuantidade.Location = new Point(416, 225);
             nudQuantidade.Name = "nudQuantidade";
             nudQuantidade.Size = new Size(120, 23);
             nudQuantidade.TabIndex = 7;
@@ -139,7 +142,7 @@
             // 
             // txtNomeCliente
             // 
-            txtNomeCliente.Location = new Point(340, 327);
+            txtNomeCliente.Location = new Point(416, 359);
             txtNomeCliente.Name = "txtNomeCliente";
             txtNomeCliente.Size = new Size(120, 23);
             txtNomeCliente.TabIndex = 8;
@@ -149,7 +152,7 @@
             // 
             labelNomeCliente.AutoSize = true;
             labelNomeCliente.Font = new Font("Agrandir Semi Narrow", 9.75F, FontStyle.Bold);
-            labelNomeCliente.Location = new Point(376, 306);
+            labelNomeCliente.Location = new Point(452, 338);
             labelNomeCliente.Name = "labelNomeCliente";
             labelNomeCliente.Size = new Size(49, 18);
             labelNomeCliente.TabIndex = 9;
@@ -160,7 +163,7 @@
             // 
             dateComandaDia.CalendarFont = new Font("Bahnschrift", 9F);
             dateComandaDia.Format = DateTimePickerFormat.Short;
-            dateComandaDia.Location = new Point(714, 54);
+            dateComandaDia.Location = new Point(829, 41);
             dateComandaDia.Name = "dateComandaDia";
             dateComandaDia.Size = new Size(95, 23);
             dateComandaDia.TabIndex = 10;
@@ -170,7 +173,7 @@
             // 
             dateComandaHoras.CalendarFont = new Font("Bahnschrift", 9F);
             dateComandaHoras.Format = DateTimePickerFormat.Time;
-            dateComandaHoras.Location = new Point(729, 25);
+            dateComandaHoras.Location = new Point(844, 12);
             dateComandaHoras.Name = "dateComandaHoras";
             dateComandaHoras.Size = new Size(80, 23);
             dateComandaHoras.TabIndex = 11;
@@ -179,7 +182,7 @@
             // 
             cboxPagamento.FormattingEnabled = true;
             cboxPagamento.Items.AddRange(new object[] { "Pix Fisíco", "Pix Digital", "Boleto", "VR", "VA", "Escambo" });
-            cboxPagamento.Location = new Point(340, 271);
+            cboxPagamento.Location = new Point(414, 296);
             cboxPagamento.Name = "cboxPagamento";
             cboxPagamento.Size = new Size(121, 23);
             cboxPagamento.TabIndex = 12;
@@ -189,7 +192,7 @@
             // 
             labelPagamento.AutoSize = true;
             labelPagamento.Font = new Font("Agrandir Semi Narrow", 9.75F, FontStyle.Bold);
-            labelPagamento.Location = new Point(358, 250);
+            labelPagamento.Location = new Point(432, 275);
             labelPagamento.Name = "labelPagamento";
             labelPagamento.Size = new Size(91, 18);
             labelPagamento.TabIndex = 13;
@@ -200,9 +203,9 @@
             // 
             picBoxLogo.Image = Properties.Resources.Captura_de_tela_2025_05_21_085355;
             picBoxLogo.InitialImage = Properties.Resources.download;
-            picBoxLogo.Location = new Point(320, 25);
+            picBoxLogo.Location = new Point(392, 25);
             picBoxLogo.Name = "picBoxLogo";
-            picBoxLogo.Size = new Size(157, 52);
+            picBoxLogo.Size = new Size(172, 52);
             picBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxLogo.TabIndex = 14;
             picBoxLogo.TabStop = false;
@@ -211,7 +214,7 @@
             // checkBoxViagem
             // 
             checkBoxViagem.AutoSize = true;
-            checkBoxViagem.Location = new Point(357, 380);
+            checkBoxViagem.Location = new Point(431, 400);
             checkBoxViagem.Name = "checkBoxViagem";
             checkBoxViagem.Size = new Size(92, 19);
             checkBoxViagem.TabIndex = 15;
@@ -219,13 +222,47 @@
             checkBoxViagem.UseVisualStyleBackColor = true;
             checkBoxViagem.CheckedChanged += checkBoxViagem_CheckedChanged;
             // 
+            // labelTotal
+            // 
+            labelTotal.AutoSize = true;
+            labelTotal.Font = new Font("Agrandir Semi Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTotal.Location = new Point(672, 461);
+            labelTotal.Name = "labelTotal";
+            labelTotal.Size = new Size(66, 22);
+            labelTotal.TabIndex = 16;
+            labelTotal.Text = "TOTAL: ";
+            labelTotal.Click += labelTotal_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(827, 555);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 17;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(672, 555);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 18;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // FormCantina
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(821, 502);
+            ClientSize = new Size(936, 590);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(labelTotal);
             Controls.Add(checkBoxViagem);
             Controls.Add(picBoxLogo);
             Controls.Add(labelPagamento);
@@ -270,5 +307,8 @@
         private Label labelPagamento;
         private PictureBox picBoxLogo;
         private CheckBox checkBoxViagem;
+        private Label labelTotal;
+        private Button button1;
+        private Button button2;
     }
 }

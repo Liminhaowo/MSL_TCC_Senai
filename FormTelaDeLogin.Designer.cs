@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(820, 514);
+            ClientSize = new Size(935, 587);
             Name = "FormTelaDeLogin";
             Text = "FormTelaDeLogin";
             Load += FormTelaDeLogin_Load;
