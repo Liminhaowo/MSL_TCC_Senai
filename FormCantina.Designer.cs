@@ -226,7 +226,7 @@
             // 
             labelTotal.AutoSize = true;
             labelTotal.Font = new Font("Agrandir Semi Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTotal.Location = new Point(672, 461);
+            labelTotal.Location = new Point(714, 462);
             labelTotal.Name = "labelTotal";
             labelTotal.Size = new Size(66, 22);
             labelTotal.TabIndex = 16;
@@ -235,7 +235,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(827, 555);
+            button1.Location = new Point(789, 555);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 17;
@@ -245,7 +245,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(672, 555);
+            button2.Location = new Point(705, 555);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 18;

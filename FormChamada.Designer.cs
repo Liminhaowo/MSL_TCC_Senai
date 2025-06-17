@@ -37,6 +37,7 @@
             ClientSize = new Size(938, 588);
             Name = "FormChamada";
             Text = "FormChamada";
+            Load += FormChamada_Load;
             ResumeLayout(false);
         }
 

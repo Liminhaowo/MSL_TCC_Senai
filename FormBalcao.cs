@@ -32,7 +32,7 @@ namespace Cantina_1._0
         }
 
         private void ConfigurarDataGridView(DataGridView dgv, string titulo)
-        { 
+        {
             dgv.AutoGenerateColumns = false;
             dgv.Columns.Clear();
 
@@ -108,7 +108,7 @@ namespace Cantina_1._0
                 listBoxInfomaçõesPedido.Items.Add("");
                 listBoxInfomaçõesPedido.Items.Add($"Para Viagem: {(pedidoSelecionado.ParaViagem ? "Sim" : "Não")}");
                 listBoxInfomaçõesPedido.Items.Add("");
-                listBoxInfomaçõesPedido.Items.Add($"Data/Hora: {pedidoSelecionado.DataEHora:dd/MM/yyyy HH:mm}");              
+                listBoxInfomaçõesPedido.Items.Add($"Data/Hora: {pedidoSelecionado.DataEHora:dd/MM/yyyy HH:mm}");
             }
         }
 
@@ -124,7 +124,7 @@ namespace Cantina_1._0
 
         private void FormBalcao_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnPronto_Click(object sender, EventArgs e)
@@ -137,8 +137,6 @@ namespace Cantina_1._0
                 BalcaoPedidos.PedidosEmEspera.Remove(pedidoSelecionado);
                 BalcaoPedidos.PedidosEntregues.Insert(0, pedidoSelecionado);
 
-                BalcaoPedidos.PedidosEmEspera.Add(pedidoSelecionado);
-
                 while (BalcaoPedidos.PedidosEntregues.Count > 5)
                 {
                     BalcaoPedidos.PedidosEntregues.RemoveAt(BalcaoPedidos.PedidosEntregues.Count - 1);
@@ -148,7 +146,7 @@ namespace Cantina_1._0
             }
             else
             {
-                MessageBox.Show("Selecione um pedido para entregar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um pedido para entregar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -164,6 +162,16 @@ namespace Cantina_1._0
 
         private void listBoxInfomaçõesPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void labelEmEspera_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelProntos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,11 +21,8 @@ namespace Cantina_1._0
         private void ConfigurarDataGridViews()
         {
             dgvPreparando.DataSource = CozinhaPedidos.PedidosPreparando;
-            dgvProntos.DataSource = CozinhaPedidos.PedidosProntos;
             ConfigurarDataGridView(dgvPreparando, "EM PREPARO - COZINHA");
-            ConfigurarDataGridView(dgvProntos, "PRONTOS - COZINHA");
             dgvPreparando.SelectionChanged += DgvPreparando_SelectionChanged;
-            dgvProntos.SelectionChanged += DgvProntos_SelectionChanged;
         }
 
         private void ConfigurarDataGridView(DataGridView dgv, string titulo)
@@ -58,7 +55,7 @@ namespace Cantina_1._0
                 DataPropertyName = "Total",
                 HeaderText = "Total",
                 Name = "Total",
-                Width = 80, 
+                Width = 80,
                 DefaultCellStyle = new DataGridViewCellStyle
                 {
                     Alignment = DataGridViewContentAlignment.MiddleRight,
@@ -115,9 +112,9 @@ namespace Cantina_1._0
             MostrarDetalhesPedido(dgvPreparando);
         }
 
-        private void DgvProntos_SelectionChanged(object sender, EventArgs e)
+        private void dgvPreparando_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MostrarDetalhesPedido(dgvProntos);
+
         }
 
         private void FormCozinha_Load(object sender, EventArgs e)

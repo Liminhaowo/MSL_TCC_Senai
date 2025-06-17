@@ -288,8 +288,7 @@ namespace Cantina_1._0
             string destino = vaiCozinha ? "Cozinha" : "Balcão";
 
             MessageBox.Show(
-                $"ID do Pedido: {novoPedido.IdPedido}\n\n" +
-                $"Nome do Cliente: {novoPedido.NomeCliente}\n\n" +
+                $"Pedido: {novoPedido.IdPedido} - Cliente: {novoPedido.NomeCliente}\n\n" +
                 $"Extrato:\n{resumo}\n" +
                 $"Total Cobrado: R$ {novoPedido.Total:F2}\n" +
                 $"Total Pago: R$ {valorPago:F2}\n" +

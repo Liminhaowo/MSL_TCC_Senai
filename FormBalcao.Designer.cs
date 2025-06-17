@@ -32,13 +32,15 @@
             dgvEspera = new DataGridView();
             dgvEntregues = new DataGridView();
             listBoxInfomaçõesPedido = new ListBox();
+            labelProntos = new Label();
+            labelEmEspera = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEspera).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvEntregues).BeginInit();
             SuspendLayout();
             // 
             // btnPronto
             // 
-            btnPronto.Location = new Point(106, 285);
+            btnPronto.Location = new Point(306, 151);
             btnPronto.Name = "btnPronto";
             btnPronto.Size = new Size(90, 23);
             btnPronto.TabIndex = 0;
@@ -49,7 +51,7 @@
             // dgvEspera
             // 
             dgvEspera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEspera.Location = new Point(29, 27);
+            dgvEspera.Location = new Point(29, 58);
             dgvEspera.Name = "dgvEspera";
             dgvEspera.Size = new Size(247, 209);
             dgvEspera.TabIndex = 1;
@@ -58,7 +60,7 @@
             // dgvEntregues
             // 
             dgvEntregues.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEntregues.Location = new Point(29, 354);
+            dgvEntregues.Location = new Point(29, 337);
             dgvEntregues.Name = "dgvEntregues";
             dgvEntregues.Size = new Size(247, 211);
             dgvEntregues.TabIndex = 2;
@@ -74,11 +76,37 @@
             listBoxInfomaçõesPedido.TabIndex = 3;
             listBoxInfomaçõesPedido.SelectedIndexChanged += listBoxInfomaçõesPedido_SelectedIndexChanged;
             // 
+            // labelProntos
+            // 
+            labelProntos.AutoSize = true;
+            labelProntos.Font = new Font("Agrandir Semi Narrow", 12F, FontStyle.Bold);
+            labelProntos.ForeColor = Color.Black;
+            labelProntos.Location = new Point(106, 312);
+            labelProntos.Name = "labelProntos";
+            labelProntos.Size = new Size(88, 22);
+            labelProntos.TabIndex = 5;
+            labelProntos.Text = "PRONTOS";
+            labelProntos.Click += labelProntos_Click;
+            // 
+            // labelEmEspera
+            // 
+            labelEmEspera.AutoSize = true;
+            labelEmEspera.Font = new Font("Agrandir Semi Narrow", 12F, FontStyle.Bold);
+            labelEmEspera.ForeColor = Color.Black;
+            labelEmEspera.Location = new Point(106, 33);
+            labelEmEspera.Name = "labelEmEspera";
+            labelEmEspera.Size = new Size(97, 22);
+            labelEmEspera.TabIndex = 4;
+            labelEmEspera.Text = "EM ESPERA";
+            labelEmEspera.Click += labelEmEspera_Click;
+            // 
             // FormBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(936, 589);
+            Controls.Add(labelProntos);
+            Controls.Add(labelEmEspera);
             Controls.Add(listBoxInfomaçõesPedido);
             Controls.Add(dgvEntregues);
             Controls.Add(dgvEspera);
@@ -90,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvEspera).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvEntregues).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -98,5 +127,7 @@
         private DataGridView dgvEspera;
         private DataGridView dgvEntregues;
         private ListBox listBoxInfomaçõesPedido;
+        private Label labelProntos;
+        private Label labelEmEspera;
     }
 }

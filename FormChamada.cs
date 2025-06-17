@@ -16,5 +16,10 @@ namespace Cantina_1._0
         {
             InitializeComponent();
         }
+
+        private void FormChamada_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
