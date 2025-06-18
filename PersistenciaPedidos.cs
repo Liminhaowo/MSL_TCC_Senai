@@ -28,12 +28,10 @@ namespace Cantina_1._0
     public static class CozinhaPedidos
     {
         public static BindingList<Pedido> PedidosPreparando = new BindingList<Pedido>();
-        public static BindingList<Pedido> PedidosProntos = new BindingList<Pedido>();
 
         static CozinhaPedidos()
         {
             PedidosPreparando = new BindingList<Pedido>();
-            PedidosProntos = new BindingList<Pedido>();
         }
     }
 }

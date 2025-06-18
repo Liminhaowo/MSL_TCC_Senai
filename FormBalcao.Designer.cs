@@ -30,12 +30,12 @@
         {
             btnPronto = new Button();
             dgvEspera = new DataGridView();
-            dgvEntregues = new DataGridView();
+            dgvProntos = new DataGridView();
             listBoxInfomaçõesPedido = new ListBox();
             labelProntos = new Label();
             labelEmEspera = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEspera).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvEntregues).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProntos).BeginInit();
             SuspendLayout();
             // 
             // btnPronto
@@ -55,16 +55,18 @@
             dgvEspera.Name = "dgvEspera";
             dgvEspera.Size = new Size(247, 209);
             dgvEspera.TabIndex = 1;
+            dgvEspera.CellClick += dgvEspera_CellContentClick;
             dgvEspera.CellContentClick += dgvEspera_CellContentClick;
             // 
-            // dgvEntregues
+            // dgvProntos
             // 
-            dgvEntregues.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEntregues.Location = new Point(29, 337);
-            dgvEntregues.Name = "dgvEntregues";
-            dgvEntregues.Size = new Size(247, 211);
-            dgvEntregues.TabIndex = 2;
-            dgvEntregues.CellContentClick += dgvEntregues_CellContentClick;
+            dgvProntos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProntos.Location = new Point(29, 337);
+            dgvProntos.Name = "dgvProntos";
+            dgvProntos.Size = new Size(247, 211);
+            dgvProntos.TabIndex = 2;
+            dgvProntos.CellClick += dgvEntregues_CellContentClick;
+            dgvProntos.CellContentClick += dgvEntregues_CellContentClick;
             // 
             // listBoxInfomaçõesPedido
             // 
@@ -108,7 +110,7 @@
             Controls.Add(labelProntos);
             Controls.Add(labelEmEspera);
             Controls.Add(listBoxInfomaçõesPedido);
-            Controls.Add(dgvEntregues);
+            Controls.Add(dgvProntos);
             Controls.Add(dgvEspera);
             Controls.Add(btnPronto);
             Name = "FormBalcao";
@@ -116,7 +118,7 @@
             Text = "FormBalcao";
             Load += FormBalcao_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEspera).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvEntregues).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProntos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,7 +127,7 @@
 
         private Button btnPronto;
         private DataGridView dgvEspera;
-        private DataGridView dgvEntregues;
+        private DataGridView dgvProntos;
         private ListBox listBoxInfomaçõesPedido;
         private Label labelProntos;
         private Label labelEmEspera;

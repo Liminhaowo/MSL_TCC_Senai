@@ -43,6 +43,7 @@
             listBoxInfomaçõesPedido2.Name = "listBoxInfomaçõesPedido2";
             listBoxInfomaçõesPedido2.Size = new Size(229, 379);
             listBoxInfomaçõesPedido2.TabIndex = 7;
+            listBoxInfomaçõesPedido2.SelectedIndexChanged += listBoxInfomaçõesPedido2_SelectedIndexChanged_1;
             // 
             // dgvPreparando
             // 
@@ -61,6 +62,7 @@
             btnEntregar.TabIndex = 4;
             btnEntregar.Text = "Entregar";
             btnEntregar.UseVisualStyleBackColor = true;
+            btnEntregar.Click += btnEntregar_Click;
             // 
             // labelPreparar
             // 

@@ -16,19 +16,18 @@ namespace Cantina_1._0
         public FormBalcao()
         {
             InitializeComponent();
-            ConfigurarDataGridViews();
+            DataGridViews();
         }
 
-        private void ConfigurarDataGridViews()
+        public void AtualizarListas()
         {
+            dgvEspera.DataSource = null;
+            dgvProntos.DataSource = null;
             dgvEspera.DataSource = BalcaoPedidos.PedidosEmEspera;
-            dgvEntregues.DataSource = BalcaoPedidos.PedidosEntregues;
-
-            ConfigurarDataGridView(dgvEspera, "EM PREPARO");
-            ConfigurarDataGridView(dgvEntregues, "PRONTOS");
-
-            dgvEspera.SelectionChanged += DgvEspera_SelectionChanged;
-            dgvEntregues.SelectionChanged += DgvEntregues_SelectionChanged;
+            dgvProntos.DataSource = BalcaoPedidos.PedidosEntregues;
+            dgvEspera.Refresh();
+            dgvProntos.Refresh();
+            listBoxInfomaçõesPedido.Items.Clear();
         }
 
         private void ConfigurarDataGridView(DataGridView dgv, string titulo)
@@ -86,7 +85,19 @@ namespace Cantina_1._0
             dgv.RowTemplate.Height = 35;
         }
 
-        private void MostrarDetalhesPedido(DataGridView dgv)
+        private void DataGridViews()
+        {
+            dgvEspera.DataSource = BalcaoPedidos.PedidosEmEspera;
+            dgvProntos.DataSource = BalcaoPedidos.PedidosEntregues;
+
+            ConfigurarDataGridView(dgvEspera, "EM PREPARO");
+            ConfigurarDataGridView(dgvProntos, "PRONTOS");
+
+            dgvEspera.SelectionChanged += DgvEspera_SelectionChanged;
+            dgvProntos.SelectionChanged += DgvEntregues_SelectionChanged;
+        }
+
+        private void DetalhesPedido(DataGridView dgv)
         {
             if (dgv.CurrentRow != null)
             {
@@ -114,12 +125,12 @@ namespace Cantina_1._0
 
         private void DgvEspera_SelectionChanged(object sender, EventArgs e)
         {
-            MostrarDetalhesPedido(dgvEspera);
+            DetalhesPedido(dgvEspera);
         }
 
         private void DgvEntregues_SelectionChanged(object sender, EventArgs e)
         {
-            MostrarDetalhesPedido(dgvEntregues);
+            DetalhesPedido(dgvProntos);
         }
 
         private void FormBalcao_Load(object sender, EventArgs e)
