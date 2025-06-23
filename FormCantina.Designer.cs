@@ -101,8 +101,9 @@
             // 
             // btnAdicionar
             // 
+            btnAdicionar.FlatStyle = FlatStyle.System;
             btnAdicionar.Font = new Font("Agrandir Semi Narrow", 9.75F, FontStyle.Bold);
-            btnAdicionar.Location = new Point(351, 176);
+            btnAdicionar.Location = new Point(352, 176);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(93, 29);
             btnAdicionar.TabIndex = 4;
@@ -235,21 +236,21 @@
             // 
             // button1
             // 
-            button1.Location = new Point(789, 555);
+            button1.Location = new Point(805, 542);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 17;
-            button1.Text = "button1";
+            button1.Text = "BALCÃO";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(705, 555);
+            button2.Location = new Point(694, 542);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 18;
-            button2.Text = "button2";
+            button2.Text = "COZINHA";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

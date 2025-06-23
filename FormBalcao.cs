@@ -95,6 +95,19 @@ namespace Cantina_1._0
 
             dgvEspera.SelectionChanged += DgvEspera_SelectionChanged;
             dgvProntos.SelectionChanged += DgvEntregues_SelectionChanged;
+            dgvEspera.DataBindingComplete += DgvEspera_SelectionChanged;
+            dgvEspera.CurrentCellChanged += DgvEspera_SelectionChanged;
+            dgvProntos.DataBindingComplete += DgvEntregues_SelectionChanged;
+            dgvProntos.CurrentCellChanged += DgvEntregues_SelectionChanged;
+
+            if (dgvEspera.Rows.Count > 0)
+            {
+                DetalhesPedido(dgvEspera);
+            }
+            else if (dgvProntos.Rows.Count > 0)
+            {
+                DetalhesPedido(dgvProntos);
+            }
         }
 
         private void DetalhesPedido(DataGridView dgv)

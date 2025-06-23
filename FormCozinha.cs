@@ -78,12 +78,19 @@ namespace Cantina_1._0
             dgvPreparando.DataSource = CozinhaPedidos.PedidosPreparando;
             ConfigurarDataGridView(dgvPreparando, "EM PREPARO - COZINHA");
             dgvPreparando.SelectionChanged += DgvPreparando_SelectionChanged;
+            dgvPreparando.DataBindingComplete += DgvPreparando_SelectionChanged;
+            dgvPreparando.CurrentCellChanged += DgvPreparando_SelectionChanged;
+
+            if (dgvPreparando.Rows.Count > 0)
+            {
+                DetalhesPedido(dgvPreparando);
+            }
         }
 
         private void DetalhesPedido(DataGridView dgv)
         {
             if (dgv.CurrentRow != null)
-            {
+            { 
                 Pedido pedidoSelecionado = (Pedido)dgv.CurrentRow.DataBoundItem;
 
                 listBoxInfomaçõesPedido2.Items.Clear();
@@ -103,6 +110,7 @@ namespace Cantina_1._0
                 listBoxInfomaçõesPedido2.Items.Add($"Para Viagem: {(pedidoSelecionado.ParaViagem ? "Sim" : "Não")}");
                 listBoxInfomaçõesPedido2.Items.Add("");
                 listBoxInfomaçõesPedido2.Items.Add($"Data/Hora: {pedidoSelecionado.DataEHora:dd/MM/yyyy HH:mm}");
+                    
             }
         }
 
@@ -123,79 +131,6 @@ namespace Cantina_1._0
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    // Debug 1: Verificar se há linha selecionada
-            //    MessageBox.Show($"Linhas no DataGridView: {dgvPreparando.Rows.Count}", "Debug 1");
-
-            //    if (dgvPreparando.CurrentRow != null)
-            //    {
-            //        // Debug 2: Verificar se conseguiu pegar o pedido
-            //        MessageBox.Show($"Linha selecionada: {dgvPreparando.CurrentRow.Index}", "Debug 2");
-
-            //        Pedido pedidoSelecionado = (Pedido)dgvPreparando.CurrentRow.DataBoundItem;
-
-            //        if (pedidoSelecionado != null)
-            //        {
-            //            // Debug 3: Mostrar dados do pedido
-            //            MessageBox.Show($"Pedido ID: {pedidoSelecionado.IdPedido}\nCliente: {pedidoSelecionado.NomeCliente}", "Debug 3");
-
-            //            // Debug 4: Verificar listas antes da operação
-            //            MessageBox.Show($"Pedidos Preparando ANTES: {CozinhaPedidos.PedidosPreparando.Count}\nPedidos Espera ANTES: {BalcaoPedidos.PedidosEmEspera.Count}", "Debug 4");
-
-            //            pedidoSelecionado.Status = "Pronto para Entrega";
-
-            //            // Remove da lista de preparando
-            //            bool removido = CozinhaPedidos.PedidosPreparando.Remove(pedidoSelecionado);
-            //            MessageBox.Show($"Pedido removido da cozinha: {removido}", "Debug 5");
-
-            //            // Adiciona na lista de espera do balcão
-            //            BalcaoPedidos.PedidosEmEspera.Insert(0, pedidoSelecionado);
-
-            //            // Debug 6: Verificar listas depois da operação
-            //            MessageBox.Show($"Pedidos Preparando DEPOIS: {CozinhaPedidos.PedidosPreparando.Count}\nPedidos Espera DEPOIS: {BalcaoPedidos.PedidosEmEspera.Count}", "Debug 6");
-
-            //            // Limpa a lista de informações
-            //            listBoxInfomaçõesPedido2.Items.Clear();
-
-            //            // Atualiza o DataGridView local FORÇADAMENTE
-            //            dgvPreparando.DataSource = null;
-            //            dgvPreparando.DataSource = CozinhaPedidos.PedidosPreparando;
-            //            dgvPreparando.Refresh();
-
-            //            // Debug 7: Verificar se encontra o FormBalcao
-            //            FormBalcao formBalcao = Application.OpenForms.OfType<FormBalcao>().FirstOrDefault();
-            //            MessageBox.Show($"FormBalcao encontrado: {formBalcao != null}", "Debug 7");
-
-            //            if (formBalcao != null)
-            //            {
-            //                try
-            //                {
-            //                    formBalcao.AtualizarListas();
-            //                    MessageBox.Show("FormBalcao atualizado com sucesso!", "Debug 8");
-            //                }
-            //                catch (Exception ex)
-            //                {
-            //                    MessageBox.Show($"Erro ao atualizar FormBalcao: {ex.Message}", "Erro Debug 8");
-            //                }
-            //            }
-
-            //            MessageBox.Show($"Pedido {pedidoSelecionado.IdPedido} enviado para o Balcão!", "Sucesso");
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("pedidoSelecionado é NULL!", "Erro Debug");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Nenhuma linha selecionada no DataGridView!", "Erro Debug");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Erro geral: {ex.Message}\n\nStackTrace: {ex.StackTrace}", "Erro Geral");
-            //}
 
             if (dgvPreparando.CurrentRow != null)
             {

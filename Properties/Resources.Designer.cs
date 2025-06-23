@@ -83,6 +83,16 @@ namespace Cantina_1._0.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CANTINA {
+            get {
+                object obj = ResourceManager.GetObject("CANTINA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_tela_2025_05_21_085203 {
             get {
                 object obj = ResourceManager.GetObject("Captura de tela 2025-05-21 085203", resourceCulture);
